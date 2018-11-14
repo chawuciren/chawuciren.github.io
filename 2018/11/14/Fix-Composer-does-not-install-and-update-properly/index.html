@@ -212,10 +212,10 @@
 <p><br><br></p>
 <h3 id="二-使用"><a href="#二-使用" class="headerlink" title="二.使用"></a>二.使用</h3><hr>
 <p><br></p>
-<p>#####1.全局配置<br>在控制台执行下面命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer config -g repo.packagist composer http://packagist.phpcomposer.com</span><br></pre></td></tr></table></figure></p>
+<h5 id="1-全局配置"><a href="#1-全局配置" class="headerlink" title="1.全局配置"></a>1.全局配置</h5><p>在控制台执行下面命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer config -g repo.packagist composer http://packagist.phpcomposer.com</span><br></pre></td></tr></table></figure></p>
 <p>如果已经进行全局配置，则不需要继续进行下面的项目配置，在所有项目中都可以使用镜像。</p>
 <p><br></p>
-<p>#####2.项目配置<br>在只需要为某个项目配置镜像时，我们可以将镜像配置信息添加到某个项目的 composer.json 文件中。进入项目目录（composer.jso 所在目录）执行下面命令：</p>
+<h5 id="2-项目配置"><a href="#2-项目配置" class="headerlink" title="2.项目配置"></a>2.项目配置</h5><p>在只需要为某个项目配置镜像时，我们可以将镜像配置信息添加到某个项目的 composer.json 文件中。进入项目目录（composer.jso 所在目录）执行下面命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer config repo.packagist composer http://packagist.phpcomposer.com</span><br></pre></td></tr></table></figure>
 <p><br></p>
 <p>上述命令将会在当前项目中的 composer.json 文件的末尾自动添加镜像的配置信息:</p>
@@ -290,7 +290,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-安装-Composer"><span class="post-toc-text">一.安装 Composer</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-使用"><span class="post-toc-text">二.使用</span></a></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-安装-Composer"><span class="post-toc-text">一.安装 Composer</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-使用"><span class="post-toc-text">二.使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-全局配置"><span class="post-toc-text">1.全局配置</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-项目配置"><span class="post-toc-text">2.项目配置</span></a></li></ol></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</div></div></aside>
