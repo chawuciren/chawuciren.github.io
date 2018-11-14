@@ -208,8 +208,7 @@
 <blockquote>
 <p><strong>环境：</strong>文章中示例使用的系统环境为 <code>CentOS 6.6</code>，PHP版本为 <code>5.6.18</code>，PHP 安装目录 /usr/local/php5，所使用的源码存放目录 /usr/local/src/php-5.6.18。后面一些命令涉及到目录的部分请注意替换为你所在环境的对应目录。</p>
 </blockquote>
-<p>###1.创建扩展骨架</p>
-<p><br></p>
+<h3 id="1-创建扩展骨架"><a href="#1-创建扩展骨架" class="headerlink" title="1.创建扩展骨架"></a>1.创建扩展骨架</h3><p><br></p>
 <p>进入PHP的源码目录下的ext目录，按习惯我们会把本地项目编译源码放在 /usr/local/src 下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src/php-5.6.18/ext/</span><br></pre></td></tr></table></figure>
 <p><br></p>
@@ -219,16 +218,14 @@
 <p>这时就能看到在 ext 的 hello_world 目录下已经生成了多个文件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---ext</span><br><span class="line"> |-config.m4</span><br><span class="line"> |-config.w32</span><br><span class="line"> |-hello_world.c</span><br><span class="line"> |-php_hello_world.h</span><br><span class="line"> ...</span><br></pre></td></tr></table></figure>
 <p><br><br></p>
-<p>###2.修改 config.m4</p>
-<p><br></p>
+<h3 id="2-修改-config-m4"><a href="#2-修改-config-m4" class="headerlink" title="2.修改 config.m4"></a>2.修改 config.m4</h3><p><br></p>
 <p>修改 config.m4 文件，找到下面的内容：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dnl PHP_ARG_WITH(hello_world, <span class="keyword">for</span> hello_world support,</span><br><span class="line">dnl Make sure that the comment is aligned:</span><br><span class="line">dnl [  --with-hello_world             Include hello_world support])</span><br></pre></td></tr></table></figure>
 <p><br></p>
 <p>这里的 <code>dnl</code> 意为注释，这段代码表示将扩展使用 with 作为动态链接库载入。在下面两行还有一段被注释的 PHP_ARG_ENABLE 表示编译到内核中。现在将上面的内容去掉注释，改为：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PHP_ARG_WITH(hello_world, <span class="keyword">for</span> hello_world support,</span><br><span class="line">dnl Make sure that the comment is aligned:</span><br><span class="line">[  --with-hello_world             Include hello_world support])</span><br></pre></td></tr></table></figure>
 <p><br><br></p>
-<p>###3.编译扩展</p>
-<p><br></p>
+<h3 id="3-编译扩展"><a href="#3-编译扩展" class="headerlink" title="3.编译扩展"></a>3.编译扩展</h3><p><br></p>
 <p>在 hello_world 目录下执行执行 <code>phpize</code> 并编译扩展，由于当前所使用的环境中安装了多个版本的 PHP，所以最好指定所使用的 phpize 的绝对目录：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/php5/bing/phpize</span><br><span class="line">./configure --with-php-config=/usr/<span class="built_in">local</span>/php5/bin/php-config</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
 <p><br></p>
@@ -327,7 +324,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、Hello-World-扩展"><span class="post-toc-text">一、Hello World 扩展</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、自定义函数"><span class="post-toc-text">二、自定义函数</span></a></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、Hello-World-扩展"><span class="post-toc-text">一、Hello World 扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-创建扩展骨架"><span class="post-toc-text">1.创建扩展骨架</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-修改-config-m4"><span class="post-toc-text">2.修改 config.m4</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-编译扩展"><span class="post-toc-text">3.编译扩展</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、自定义函数"><span class="post-toc-text">二、自定义函数</span></a></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</div></div></aside>
