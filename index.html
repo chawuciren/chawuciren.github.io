@@ -61,7 +61,7 @@
 	
 	<!-- others: such as change-bg, time... -->
 	<p class="page-name-other">
-		11/13/2018 
+		11/14/2018 
 		<style type="text/css">
 	header:after {
 		content: '';
@@ -147,14 +147,14 @@
 			<article class="am-g blog-entry-article">
 
 				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
-					<img src="/img/cart_cover.jpg" class="am-u-sm-12">
+					<img src="/images/posts/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/cover.jpg" class="am-u-sm-12">
 				</div>	
 
 				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
 					<span class="theme-annie-post-date">
-						<a href="/2018/11/13/hello-world/" itemprop="url">
-	<time datetime="2018-11-13T02:58:41.728Z" itemprop="datePublished">
-  		2018-11-13
+						<a href="/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/" itemprop="url">
+	<time datetime="2018-11-14T02:31:44.000Z" itemprop="datePublished">
+  		2018-11-14
   </time>
 </a>    
 
@@ -162,8 +162,8 @@
 					<span class="theme-annie-post-title">
 						
 	
-		<a href="/2018/11/13/hello-world/" itemprop="url">		
-			Hello World		
+		<a href="/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/" itemprop="url">		
+			Laravel 连接 Mysql 时使用非默认端口的配置		
 		</a>
 	
 
@@ -172,15 +172,170 @@
 					
 						<p>
 							
-								Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick	
+								大部分情况下，在生产环境中我们会修改 Mysql 服务的默认端口，提高安全性。当使用 Laravel 时需要同时修改配置文件 database.php ，来改变端口。
+
+
+一.修改 config/database.php 文件
+
+#####1.使用 vim 编辑配置文件，打开 config/database.php
+1vim config/database.php
+
+#####2.找到下面这段内容	
 							  
 						</p> 
 					
 
 					
 						<span class="continue-read">      	
-							<a href="/2018/11/13/hello-world/" class="pull-right">
+							<a href="/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/" class="pull-right">
+								展开全文
+							</a>		
+						</span>
+					         		
+				</div>
+		
+			</article>
+		
+			<article class="am-g blog-entry-article">
+
+				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
+					<img src="/images/posts/Fix-Composer-does-not-install-and-update-properly/cover.jpg" class="am-u-sm-12">
+				</div>	
+
+				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
+					<span class="theme-annie-post-date">
+						<a href="/2018/11/14/Fix-Composer-does-not-install-and-update-properly/" itemprop="url">
+	<time datetime="2018-11-14T02:24:55.000Z" itemprop="datePublished">
+  		2018-11-14
+  </time>
+</a>    
+
+					</span>
+					<span class="theme-annie-post-title">
+						
+	
+		<a href="/2018/11/14/Fix-Composer-does-not-install-and-update-properly/" itemprop="url">		
+			Composer 无法正常安装/更新解决		
+		</a>
+	
+
+					</span>
+					
+					
+						<p>
+							
+								Composer 是 PHP 用来管理依赖关系的工具，类似于 npm ，给海量 PHP 包提供了一个异常方便的协作通道。
+但是由于国内目前种种众所周知的神秘力量的作用，经常出现 Composer 下载包缓慢包甚至无法使用的情况。
+目前的情况可以使用中国区镜像来缓解。
+
+
+一.安装 Composer
+
+全局安装是将 composer 安装到系统环境变量 PATH 所包含的路径下面，然后就能够在命令行	
+							  
+						</p> 
+					
+
+					
+						<span class="continue-read">      	
+							<a href="/2018/11/14/Fix-Composer-does-not-install-and-update-properly/" class="pull-right">
+								展开全文
+							</a>		
+						</span>
+					         		
+				</div>
+		
+			</article>
+		
+			<article class="am-g blog-entry-article">
+
+				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
+					<img src="/images/posts/Use-Protobuffer-to-communicate-with-the-server-side-in-Web-pages/cover.jpg" class="am-u-sm-12">
+				</div>	
+
+				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
+					<span class="theme-annie-post-date">
+						<a href="/2018/11/14/Use-Protobuffer-to-communicate-with-the-server-side-in-Web-pages/" itemprop="url">
+	<time datetime="2018-11-14T02:14:54.000Z" itemprop="datePublished">
+  		2018-11-14
+  </time>
+</a>    
+
+					</span>
+					<span class="theme-annie-post-title">
+						
+	
+		<a href="/2018/11/14/Use-Protobuffer-to-communicate-with-the-server-side-in-Web-pages/" itemprop="url">		
+			在 Web 页面中使用 Protobuffer 与服务端通信		
+		</a>
+	
+
+					</span>
+					
+					
+						<p>
+							
+								protobuffer（下面的内容中简称pb）是 google 的一种数据交换的格式，它独立于语言，独立于平台。由于它是一种二进制的格式，比使用 xml 或者 json 进行数据交换快许多。作为一种效率和兼容性都很优秀的二进制数据传输格式，可以用于诸如网络传输、配置文件、数据存储等诸多领域。
+
+
+一.依赖的库
+
+1.long.js&lt;传送门: https://github.com/dcodeI	
+							  
+						</p> 
+					
+
+					
+						<span class="continue-read">      	
+							<a href="/2018/11/14/Use-Protobuffer-to-communicate-with-the-server-side-in-Web-pages/" class="pull-right">
+								展开全文
+							</a>		
+						</span>
+					         		
+				</div>
+		
+			</article>
+		
+			<article class="am-g blog-entry-article">
+
+				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
+					<img src="/images/posts/Install-dnsmasq-in-CentOS-to-implement-local-DNS-server/cover.jpg" class="am-u-sm-12">
+				</div>	
+
+				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
+					<span class="theme-annie-post-date">
+						<a href="/2018/11/14/Install-dnsmasq-in-CentOS-to-implement-local-DNS-server/" itemprop="url">
+	<time datetime="2018-11-14T01:37:59.000Z" itemprop="datePublished">
+  		2018-11-14
+  </time>
+</a>    
+
+					</span>
+					<span class="theme-annie-post-title">
+						
+	
+		<a href="/2018/11/14/Install-dnsmasq-in-CentOS-to-implement-local-DNS-server/" itemprop="url">		
+			CentOS 中安装 DNSmasq 实现本地 DNS 服务器		
+		</a>
+	
+
+					</span>
+					
+					
+						<p>
+							
+								
+
+一.场景
+大部分时候我们的服务端开发环境下并不止部署一套代码，可以通过修改 host 文件的方式，将不同项目用不同域名访问，如 www.myapp1.dev www.myapp1.dev，并将域名解析到开发环境的 web 服务器。 例如下面的 host 文件，我的开发环境部署在 ip 为192.168.1.101这台虚拟机上：
+12192.168.1.101 www.game.dev 192.	
+							  
+						</p> 
+					
+
+					
+						<span class="continue-read">      	
+							<a href="/2018/11/14/Install-dnsmasq-in-CentOS-to-implement-local-DNS-server/" class="pull-right">
 								展开全文
 							</a>		
 						</span>
@@ -206,19 +361,11 @@ Quick
 		<div class="theme-annie-social">
 				
 				
-					<a href="http://github.com/" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
+					<a href="http://github.com/chawuciren" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
 					
 				
-					<a href="http://github.com/" title="Weibo" target="_blank"><i class="fa fa-weibo"></i>&nbsp;</a>
-				
-				
-					<a href="http://github.com/" title="Email" target="_blank"><i class="fa fa-envelope-o"></i>&nbsp;</a>
 					
-				
-					<a href="http://github.com/" title="QQ" target="_blank"><i class="fa fa-qq"></i>&nbsp;</a>
 					
-				
-					<a href="http://github.com/" title="Twitter" target="_blank"><i class="fa fa-twitter"></i>&nbsp;</a>
 						
 				
 		</div>

@@ -10,7 +10,7 @@
 		
 
 <head><meta name="generator" content="Hexo 3.8.0">
-	<title>Hello World</title>
+	<title>Laravel 连接 Mysql 时使用非默认端口的配置</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI">
@@ -54,14 +54,14 @@
 		
 		
 			
-			<p class="page-name">当前文章&nbsp;:&nbsp;《Hello World》</p>
+			<p class="page-name">当前文章&nbsp;:&nbsp;《Laravel 连接 Mysql 时使用非默认端口的配置》</p>
 			
 		
 	
 	
 	<!-- others: such as change-bg, time... -->
 	<p class="page-name-other">
-		11/13/2018 
+		11/14/2018 
 		<style type="text/css">
 	header:after {
 		content: '';
@@ -152,8 +152,8 @@
 					
 					
 	
-		<a href="/2018/11/13/hello-world/" itemprop="url">		
-			Hello World		
+		<a href="/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/" itemprop="url">		
+			Laravel 连接 Mysql 时使用非默认端口的配置		
 		</a>
 	
 
@@ -162,15 +162,22 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/11/13/hello-world/" itemprop="url">
-	<time datetime="2018-11-13T02:58:41.728Z" itemprop="datePublished">
-  		2018-11-13
+						<a href="/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/" itemprop="url">
+	<time datetime="2018-11-14T02:31:44.000Z" itemprop="datePublished">
+  		2018-11-14
   </time>
 </a>    
 &nbsp;
 					</span>
 					
 					<span>						
+						
+							<i class="fa fa-tags"></i>
+							
+								<a href="#Laravel" title="Laravel" rel="1">Laravel</a>&nbsp;
+							
+								<a href="#MySQL" title="MySQL" rel="1">MySQL</a>&nbsp;
+													 											
 						
 					</span>
 				</p>
@@ -179,15 +186,24 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+						<p>大部分情况下，在生产环境中我们会修改 Mysql 服务的默认端口，提高安全性。当使用 Laravel 时需要同时修改配置文件 database.php ，来改变端口。</p>
+<p><img src="/images/posts/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/cover.jpg" alt=""></p>
+<p><br><br><br></p>
+<h3 id="一-修改-config-database-php-文件"><a href="#一-修改-config-database-php-文件" class="headerlink" title="一.修改 config/database.php 文件"></a>一.修改 config/database.php 文件</h3><hr>
+<p><br></p>
+<p>#####1.使用 vim 编辑配置文件，打开 config/database.php</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim config/database.php</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>#####2.找到下面这段内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'mysql'</span> =&gt; [</span><br><span class="line">    <span class="string">'driver'</span>    =&gt; <span class="string">'mysql'</span>,</span><br><span class="line">    <span class="string">'host'</span>      =&gt; env(<span class="string">'DB_HOST'</span>, <span class="string">'localhost'</span>),</span><br><span class="line">    <span class="string">'database'</span>  =&gt; env(<span class="string">'DB_DATABASE'</span>, <span class="string">'forge'</span>),</span><br><span class="line">    <span class="string">'username'</span>  =&gt; env(<span class="string">'DB_USERNAME'</span>, <span class="string">'forge'</span>),</span><br><span class="line">    <span class="string">'password'</span>  =&gt; env(<span class="string">'DB_PASSWORD'</span>, <span class="string">''</span>),</span><br><span class="line">    <span class="string">'charset'</span>   =&gt; <span class="string">'utf8'</span>,</span><br><span class="line">    <span class="string">'collation'</span> =&gt; <span class="string">'utf8_unicode_ci'</span>,</span><br><span class="line">    <span class="string">'prefix'</span>    =&gt; <span class="string">''</span>,</span><br><span class="line">    <span class="string">'strict'</span>    =&gt; <span class="literal">false</span>,</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>#####3.在配置中加入端口配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'port'</span>      =&gt; env(<span class="string">'DB_PORT'</span>, 3306),</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<h3 id="二-修改-env-文件"><a href="#二-修改-env-文件" class="headerlink" title="二.修改 .env 文件"></a>二.修改 .env 文件</h3><hr>
+<p><br></p>
+<p>在 .env 配置文件中添加 DB_PORT 配置，例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DB_PORT=30006</span><br></pre></td></tr></table></figure>
 
 					
 				</div>
@@ -197,6 +213,12 @@
 		<ul class="am-pagination">
     
 	
+		<li class="am-pagination-next">
+		<a class="pull-right" href="/2018/11/14/Fix-Composer-does-not-install-and-update-properly/" title="Composer 无法正常安装/更新解决">
+			下一篇 &raquo;
+		</a>
+		</li>
+	 
  </ul>
         
 
@@ -284,7 +306,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-修改-config-database-php-文件"><span class="post-toc-text">一.修改 config/database.php 文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-修改-env-文件"><span class="post-toc-text">二.修改 .env 文件</span></a></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</div></div></aside>
@@ -301,19 +323,11 @@
 		<div class="theme-annie-social">
 				
 				
-					<a href="http://github.com/" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
+					<a href="http://github.com/chawuciren" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
 					
 				
-					<a href="http://github.com/" title="Weibo" target="_blank"><i class="fa fa-weibo"></i>&nbsp;</a>
-				
-				
-					<a href="http://github.com/" title="Email" target="_blank"><i class="fa fa-envelope-o"></i>&nbsp;</a>
 					
-				
-					<a href="http://github.com/" title="QQ" target="_blank"><i class="fa fa-qq"></i>&nbsp;</a>
 					
-				
-					<a href="http://github.com/" title="Twitter" target="_blank"><i class="fa fa-twitter"></i>&nbsp;</a>
 						
 				
 		</div>

@@ -1,0 +1,474 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+
+	<!DOCTYPE html>
+	<html>
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<title>在 Web 页面中使用 Protobuffer 与服务端通信</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="chawuciren">
+    <meta name="keywords" content="">
+    <meta name="description" content="大道至简 少既是多">
+   	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- favicon -->
+	<link href="/img/favicon.ico" rel="Shortcut Icon" type="image/ico">
+	
+	<!-- font-awesome -->
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+	<body>	
+		<!--Preloader-->
+<div id="preloader">
+	<div id="status">
+		<!--<img alt="PRELOADER" src="/img/logo.png">-->
+	</div>
+</div>
+<!--Preloader end-->
+
+<!-- header -->
+
+	<header id="header-bg-1" style="background-image: url( /img/background.jpg );">	
+
+	
+		<div id="cd-logo"><a href="/"><img src="/img/my_avatar.jpg" alt="Logo"></a></div>
+	
+	
+	<!-- motto or description -->
+		
+ 		<p class="motto"></p>
+	
+	
+	<!-- current page name or title -->
+	
+		
+		
+			
+			<p class="page-name">当前文章&nbsp;:&nbsp;《在 Web 页面中使用 Protobuffer 与服务端通信》</p>
+			
+		
+	
+	
+	<!-- others: such as change-bg, time... -->
+	<p class="page-name-other">
+		11/14/2018 
+		<style type="text/css">
+	header:after {
+		content: '';
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: #222222;
+		opacity: .5;
+		z-index: -1;
+	}
+	
+	.change-header-bg{
+		font-style: normal;
+	}
+	.change-header-bg i{
+		text-align: center;
+		cursor: pointer;
+		pointer-events: bounding-box;
+	}
+	@media(max-width:512px) {
+		.change-header-bg {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function changeHeaderBg(){
+		var random_bg = Math.floor(Math.random() * 109 + 1);
+		var bg = 'url(https://github.com/Sariay/Random-img' + random_bg + '.jpg)';
+		$("#header-bg-2").css("background-image", bg);
+	}
+</script>
+
+<span class="change-header-bg">
+	——&nbsp;<i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>	
+</span>
+	</p>		
+</header>
+
+<!-- nav -->
+<div id="cd-nav">
+	<a href="#0" title="menu" class="cd-nav-trigger"><span></span></a>
+
+	<nav id="cd-main-nav">
+		<ul>
+			
+      		<li class="fa fa-/">
+           		<a href="/" title="主页">主页</a>	
+      		</li>
+    		
+      		<li class="fa fa-/archives">
+           		<a href="/archives" title="归档">归档</a>	
+      		</li>
+    		
+      		<li class="fa fa-/categories">
+           		<a href="/categories" title="分类">分类</a>	
+      		</li>
+    		
+      		<li class="fa fa-/tags">
+           		<a href="/tags" title="标签">标签</a>	
+      		</li>
+    		
+    		
+        	
+		</ul>
+	</nav>
+</div>
+
+		<!--main-->
+		<main> 
+		<div class="page-container">
+		<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-md-8 am-u-sm-12">
+
+		<article class="am-article blog-article-p">
+
+			<div class="am-article-hd">
+				
+
+
+				<h1 class="am-article-title blog-text-center">
+					
+					
+	
+		<a href="/2018/11/14/Use-Protobuffer-to-communicate-with-the-server-side-in-Web-pages/" itemprop="url">		
+			在 Web 页面中使用 Protobuffer 与服务端通信		
+		</a>
+	
+
+				</h1>
+
+				<p class="am-article-meta blog-text-center">
+					<span>
+						<i class="fa fa-clock-o"></i> 
+						<a href="/2018/11/14/Use-Protobuffer-to-communicate-with-the-server-side-in-Web-pages/" itemprop="url">
+	<time datetime="2018-11-14T02:14:54.000Z" itemprop="datePublished">
+  		2018-11-14
+  </time>
+</a>    
+&nbsp;
+					</span>
+					
+					<span>						
+						
+							<i class="fa fa-tags"></i>
+							
+								<a href="#ProtoBuffer" title="ProtoBuffer" rel="1">ProtoBuffer</a>&nbsp;
+													 											
+						
+					</span>
+				</p>
+			</div>
+
+			<div class="am-article-bd">
+				<div class="content" id="post-content">
+					
+						<p>protobuffer（下面的内容中简称pb）是 google 的一种数据交换的格式，它独立于语言，独立于平台。由于它是一种二进制的格式，比使用 xml 或者 json 进行数据交换快许多。作为一种效率和兼容性都很优秀的二进制数据传输格式，可以用于诸如网络传输、配置文件、数据存储等诸多领域。</p>
+<p><img src="/images/posts/Use-Protobuffer-to-communicate-with-the-server-side-in-Web-pages/cover.jpg" alt=""></p>
+<p><br><br><br></p>
+<h3 id="一-依赖的库"><a href="#一-依赖的库" class="headerlink" title="一.依赖的库"></a>一.依赖的库</h3><hr>
+<p><br></p>
+<h5 id="1-long-js"><a href="#1-long-js" class="headerlink" title="1.long.js"></a>1.long.js</h5><p>&lt;传送门: <a href="https://github.com/dcodeIO/long.js&quot;" target="_blank" rel="noopener">https://github.com/dcodeIO/long.js&quot;</a> &gt;</p>
+<p><br></p>
+<h5 id="2-bytebuffer-js"><a href="#2-bytebuffer-js" class="headerlink" title="2.bytebuffer.js"></a>2.bytebuffer.js</h5><p>&lt;传送门: <a href="https://github.com/dcodeIO/bytebuffer.js" target="_blank" rel="noopener">https://github.com/dcodeIO/bytebuffer.js</a> &gt;</p>
+<p><br></p>
+<h5 id="3-protobuf-js"><a href="#3-protobuf-js" class="headerlink" title="3.protobuf.js"></a>3.protobuf.js</h5><p>&lt;传送门: <a href="https://github.com/dcodeIO/bytebuffer.js&quot;" target="_blank" rel="noopener">https://github.com/dcodeIO/bytebuffer.js&quot;</a> &gt;</p>
+<p><br><br><br></p>
+<h3 id="二-开始动手"><a href="#二-开始动手" class="headerlink" title="二.开始动手"></a>二.开始动手</h3><hr>
+<p><br></p>
+<h5 id="1-解压上面的压缩包："><a href="#1-解压上面的压缩包：" class="headerlink" title="1.解压上面的压缩包："></a>1.解压上面的压缩包：</h5><p>将上面所列的项目 zip 包下载到本地后，分别在各项目的 dist 目录下找到：<em>Long.js，ProtoBuf.js，ByteBufferAB.js</em>文件，复制到 Web 目录的 <em>js</em> 目录下。</p>
+<p><br></p>
+<h5 id="2-在Web目录下新建-index-html文件。"><a href="#2-在Web目录下新建-index-html文件。" class="headerlink" title="2.在Web目录下新建 index.html文件。"></a>2.在Web目录下新建 <em>index.html</em>文件。</h5><p><br></p>
+<h5 id="3-在html中引入上面的js："><a href="#3-在html中引入上面的js：" class="headerlink" title="3.在html中引入上面的js："></a>3.在html中引入上面的js：</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../js/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../js/Long.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../js/ByteBufferAB.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../js/ProtoBuf.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<h3 id="三-处理表单和提交"><a href="#三-处理表单和提交" class="headerlink" title="三.处理表单和提交"></a>三.处理表单和提交</h3><hr>
+<p><br></p>
+<h5 id="1-增加一个表单："><a href="#1-增加一个表单：" class="headerlink" title="1.增加一个表单："></a>1.增加一个表单：</h5><p>这里的 <em>demo</em> 是一个登陆表单</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">"login_form"</span> <span class="attr">action</span>=<span class="string">"/client.php"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">pre</span> <span class="attr">id</span>=<span class="string">"message"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="2-处理表单提交事件时阻止冒泡："><a href="#2-处理表单提交事件时阻止冒泡：" class="headerlink" title="2.处理表单提交事件时阻止冒泡："></a>2.处理表单提交事件时阻止冒泡：</h5><p>我们需要在表单提交时获取表单中的数据，以便转为 <em>pb</em>，然后用 <em>ajax</em> 方式提交，所以需要通过阻止冒泡中断表单自身的提交。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#login_form'</span>).submit(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<h3 id="四-提交-pb-数据"><a href="#四-提交-pb-数据" class="headerlink" title="四.提交 pb 数据"></a>四.提交 pb 数据</h3><hr>
+<p><br></p>
+<h5 id="1-定义一个-proto-文件"><a href="#1-定义一个-proto-文件" class="headerlink" title="1.定义一个 proto 文件"></a>1.定义一个 proto 文件</h5><p>先定义一个 proto 文件来描述我们要提交的数据的格式，新建文件client.proto，并加入下面内容：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//请求服务端-登录</span></span><br><span class="line">message PbReqUserLogin&#123;</span><br><span class="line">    required string username = <span class="number">1</span>;<span class="comment">//用户名</span></span><br><span class="line">    required string password = <span class="number">2</span>;<span class="comment">//密码</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//返回客户端-登录</span></span><br><span class="line">message PbResUserLogin&#123;</span><br><span class="line">    required string sessionId = <span class="number">1</span>;<span class="comment">//会话ID</span></span><br><span class="line">    required string token = <span class="number">2</span>;<span class="comment">//令牌</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="2-将-proto-文件编译为-json-格式"><a href="#2-将-proto-文件编译为-json-格式" class="headerlink" title="2.将 proto 文件编译为 json 格式"></a>2.将 proto 文件编译为 json 格式</h5><p>执行这一步要求环境中已经部署 <code>node.js</code> 并且全局安装了 <code>protobufjs</code> 这个库<br>编译工具的详细使用方法请参考下面链接：<br><a href="https://github.com/dcodeIO/protobuf.js/wiki/proto2js" target="_blank" rel="noopener">https://github.com/dcodeIO/protobuf.js/wiki/proto2js</a></p>
+<p>安装完成后，使用pbjs命令来编译文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pbjs client.proto &gt; client.json</span><br></pre></td></tr></table></figure>
+<p>然后将编译后的 json 文件复制到 index.html 的同级目录下</p>
+<p><br></p>
+<h5 id="3-生成pb并提交"><a href="#3-生成pb并提交" class="headerlink" title="3.生成pb并提交"></a>3.生成pb并提交</h5><p>下面的代码，通过 ProtoBuf.loadJsonFile 加载 pb 的定义，接着调用 builder.build() 方法构建所有定义的pb类，并赋值到变量 pb，然后就可以通过 new 出 pb 下的对应类名来实例化pb类了。<br>然后将 encode 过的数据转为 ArrayBuffer，通过 XMLHttpRequest提交到服务端，这里演示前端 pb 的处理，暂不贴服务端的处理过程：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ProtoBuf = dcodeIO.ProtoBuf;</span><br><span class="line"><span class="keyword">var</span> ByteBuffer = dcodeIO.ByteBuffer;</span><br><span class="line"><span class="keyword">var</span> xmlhttp = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sendProtobuf</span>(<span class="params">url, data, cb</span>) </span>&#123;</span><br><span class="line">    ProtoBuf.loadJsonFile(<span class="string">'client.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, builder</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> pb = builder.build();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> userLogin = <span class="keyword">new</span> pb.PbReqUserLogin(&#123;</span><br><span class="line">            <span class="string">'username'</span>: data.username,</span><br><span class="line">            <span class="string">'password'</span>: data.password</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">var</span> userLoginBuffer = userLogin.encode();</span><br><span class="line">        buffer = userLoginBuffer.toArrayBuffer();</span><br><span class="line"></span><br><span class="line">        xmlhttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">        xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(xmlhttp.readyState == <span class="number">4</span> &amp;&amp; xmlhttp.status == <span class="number">200</span>) &#123;</span><br><span class="line">                <span class="keyword">var</span> msg = buildProtobufObject(</span><br><span class="line">                    pb.PbResUserLogin,</span><br><span class="line">                    xmlhttp.responseText</span><br><span class="line">                );</span><br><span class="line">                cb(<span class="literal">null</span>, msg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        xmlhttp.open(<span class="string">'POST'</span>, <span class="string">'/client.php?class=User&amp;method=Login'</span>, <span class="literal">true</span>);</span><br><span class="line">        xmlhttp.send(buffer);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="五-收到返回的-pb-文件并处理"><a href="#五-收到返回的-pb-文件并处理" class="headerlink" title="五.收到返回的 pb 文件并处理"></a>五.收到返回的 pb 文件并处理</h3><p><br></p>
+<h5 id="1-定义方法处理收到的-pb-数据"><a href="#1-定义方法处理收到的-pb-数据" class="headerlink" title="1.定义方法处理收到的 pb 数据"></a>1.定义方法处理收到的 pb 数据</h5><p>由于 http 返回的pb数据实际上是 String 类型的，我们需要将其转为 ByteBuffer 后，通过对应的类的 decode 方法转回对象使用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">buildProtobufObject</span>(<span class="params">pb, str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> buffer = <span class="keyword">new</span> ByteBuffer();</span><br><span class="line"></span><br><span class="line">    buffer = buffer.append(str);</span><br><span class="line">    buffer.limit = buffer.offset;</span><br><span class="line">    buffer.offset = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> obj = pb.decode(buffer);</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="2-处理表单提交事件"><a href="#2-处理表单提交事件" class="headerlink" title="2.处理表单提交事件"></a>2.处理表单提交事件</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	$(<span class="string">'#login_form button[type="submit"]'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> url = $(<span class="string">'#login_form'</span>).attr(<span class="string">'action'</span>);</span><br><span class="line">		<span class="keyword">var</span> username = $(<span class="string">'#login_form input[name="username"]'</span>).val();</span><br><span class="line">		<span class="keyword">var</span> password = $(<span class="string">'#login_form input[name="password"]'</span>).val();</span><br><span class="line">		sendProtobuf(url, &#123;<span class="string">'username'</span>: username, <span class="string">'password'</span>: password&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, msg</span>) </span>&#123;</span><br><span class="line">			<span class="keyword">var</span> str = msg.encodeJSON();</span><br><span class="line">			$(<span class="string">'#message'</span>).text(str);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>接下来，在浏览器中访问 index.html，输入用户名密码，点击提交。<br>收到的数据将被打印在登陆表单下方。<br>注意，例子中使用的页面及资源必须放置于所请求的服务端地址同一域名下，否则会有跨域问题。</p>
+<p><img src="/Uploads/Editor/2015-11-04/5639d5a804525.png" alt=""></p>
+<hr>
+
+					
+				</div>
+			</div>
+		</article>
+
+		<ul class="am-pagination">
+    
+    	<li class="am-pagination-prev">
+   		<a class="pull-left" href="/2018/11/14/Fix-Composer-does-not-install-and-update-properly/" title="Composer 无法正常安装/更新解决">
+      		&laquo; 上一篇
+		</a>
+		</li>
+	
+	
+		<li class="am-pagination-next">
+		<a class="pull-right" href="/2018/11/14/Install-dnsmasq-in-CentOS-to-implement-local-DNS-server/" title="CentOS 中安装 DNSmasq 实现本地 DNS 服务器">
+			下一篇 &raquo;
+		</a>
+		</li>
+	 
+ </ul>
+        
+
+		<div class="theme-annie-comment-button-container">
+	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
+		加载评论
+		<!--加载评论-->
+	</button>
+</div>
+
+<div id="annie-comment-container" class="theme-annie-comment-main-container">
+
+	
+		
+			<!-- comment valine -->
+			<!-- show valine comment -->
+<div id="valineComment" class="comment"></div>
+
+<!-- valine`s js & css -->
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/valine.min.js"></script>
+<link rel="stylesheet" href="/css/comment.css">
+
+<script>
+	var checkExistComment = setInterval(function() {
+		if( $('#valineComment').length ) {
+			new Valine({
+				// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+				av: AV,
+				//使用id寻找div元素（使用class可能找不到）
+				el: '#valineComment',
+				emoticon_url: 'https://cloud.panjunwen.com/alu',
+				emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
+				app_id: "3333....", //获取APP ID
+				app_key: "3333......", //获取APP KEY
+				placeholder: "no any!", //评论框占位提示文字        			
+			});
+			clearInterval(checkExistComment);
+		}
+	}, 100);
+</script>
+		
+	
+
+</div>
+
+<script type="text/javascript">
+	/* Show Comment */
+	var Annie_Comment = function() {
+		function Show_Hidden(obj) {
+			obj.style.display = 'block';
+		}
+		
+		//var obutton = $('#annie-comment-button');
+		//var obutton = $('#annie-comment-container');
+		var obutton = document.getElementById("annie-comment-button" || "0");
+		var odiv = document.getElementById("annie-comment-container");
+		if( 'obutton' ) {
+			obutton.onclick = function() {
+				Show_Hidden(odiv);
+				$("#annie-comment-button").css("display", 'none');
+				return false;
+			}
+		}
+	};
+
+	(function Annie_Init() {
+		Annie_Comment();
+	})();
+</script>
+		
+		<!--
+	时间：2018-09-24
+	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
+-->
+
+	
+		<aside class="post-widget">
+			<nav class="post-toc-wrap" id="post-toc">
+				
+					<strong>文章目录</strong>
+				
+				
+				<!--toc(post.content)-->
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-依赖的库"><span class="post-toc-text">一.依赖的库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-long-js"><span class="post-toc-text">1.long.js</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-bytebuffer-js"><span class="post-toc-text">2.bytebuffer.js</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-protobuf-js"><span class="post-toc-text">3.protobuf.js</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-开始动手"><span class="post-toc-text">二.开始动手</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-解压上面的压缩包："><span class="post-toc-text">1.解压上面的压缩包：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-在Web目录下新建-index-html文件。"><span class="post-toc-text">2.在Web目录下新建 index.html文件。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-在html中引入上面的js："><span class="post-toc-text">3.在html中引入上面的js：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三-处理表单和提交"><span class="post-toc-text">三.处理表单和提交</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-增加一个表单："><span class="post-toc-text">1.增加一个表单：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-处理表单提交事件时阻止冒泡："><span class="post-toc-text">2.处理表单提交事件时阻止冒泡：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四-提交-pb-数据"><span class="post-toc-text">四.提交 pb 数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-定义一个-proto-文件"><span class="post-toc-text">1.定义一个 proto 文件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-将-proto-文件编译为-json-格式"><span class="post-toc-text">2.将 proto 文件编译为 json 格式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-生成pb并提交"><span class="post-toc-text">3.生成pb并提交</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五-收到返回的-pb-文件并处理"><span class="post-toc-text">五.收到返回的 pb 文件并处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-定义方法处理收到的-pb-数据"><span class="post-toc-text">1.定义方法处理收到的 pb 数据</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-处理表单提交事件"><span class="post-toc-text">2.处理表单提交事件</span></a></li></ol></li>
+			</nav>
+			<div class="post-toc-bar"><div>
+		</div></div></aside>
+	
+
+	</div>
+</div>
+		</div>
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="blog-text-center">
+		<div class="theme-annie-social">
+				
+				
+					<a href="http://github.com/chawuciren" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
+					
+				
+					
+					
+						
+				
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			
+				&copy; 2017 - 2018, content by chawuciren. All Rights Reserved.			       	
+			
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.		
+		</div>
+	</div>
+</footer>
+		<!-- <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
+
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+
+<style>
+	.motto {
+		color: #000000;
+		font-size: 20px;
+		margin: 100px 25% 0;
+		width: 50%;
+		line-height: 1.4;
+		font-family:"KaiTi", "STXingkai", "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+		text-align: center;
+	}
+	@media(max-width: 890px) {
+		.motto {	
+			margin: 100px 10% 0;
+			width: 80%;
+		}
+	}
+	@media(max-width: 890px) {
+		.motto {
+			margin: 100px 5% 0;
+			width: 90%;
+		}
+	}
+</style>
+
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html(getMingYanContent());
+	</script>	
+
+
+
+
+
+
+
+	<script type="text/javascript" src="/js/toc.js"></script>
+
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript">
+	//generate a random img that pre_name 'from 0 to 110'
+	var random_bg = Math.floor(Math.random() * 109 + 1);
+
+	//var bg = 'url(/img/random/' + random_bg + '.jpg)';		
+	var bg = 'url(https://github.com/Sariay/Random-img' + random_bg + '.jpg)';
+
+	$("#header-bg-2").css("background-image", bg);
+</script>
+		
+		<!--back to top-->
+        <style type="text/css">
+	#totop {
+		background: white;
+		border-radius: 50%;
+		position: fixed;
+		right: 5.4%;
+		bottom: 80px;
+		cursor: pointer;
+	}
+	
+	#totop a {
+		color: #474747;
+		background-color: transparent;
+		padding: 10px;
+		text-decoration: none;
+	}
+	
+	@media(max-width:512px) {
+		#totop {
+			display: none;
+			visibility: hidden;
+		}
+	}
+</style>
+
+
+	<div id="totop">
+  		<a href="javascript:;" class="fa fa-arrow-up"></a>
+	</div>
+
+	</body>
+	</html>
+
