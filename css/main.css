@@ -178,6 +178,25 @@ footer span {
 }
 
 
+.theme-annie-social-header {
+	margin: 30px;
+	text-align: center;
+}
+
+.theme-annie-social-header a {
+	margin: 0 10px 0 10px;
+	color: #474747;
+}
+
+.theme-annie-social-header a:hover {
+	font-weight: bold;
+	border-bottom: 1px dashed lightgray;
+}
+
+.theme-annie-fa-social {
+	font-size: 32px !important;
+}
+
 /*文章、页面居中布局*/
 
 .am-u-md-8 {
