@@ -10,7 +10,7 @@
 		
 
 <head><meta name="generator" content="Hexo 3.8.0">
-	<title>Laravel 连接 Mysql 时使用非默认端口的配置</title>
+	<title>常用的在线文档汇总</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI">
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class="page-name">当前文章&nbsp;:&nbsp;《Laravel 连接 Mysql 时使用非默认端口的配置》</p>
+			<p class="page-name">当前文章&nbsp;:&nbsp;《常用的在线文档汇总》</p>
 			
 		
 	
@@ -152,8 +152,8 @@
 					
 					
 	
-		<a href="/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/" itemprop="url">		
-			Laravel 连接 Mysql 时使用非默认端口的配置		
+		<a href="/2018/11/14/Common-online-document-summary/" itemprop="url">		
+			常用的在线文档汇总		
 		</a>
 	
 
@@ -162,8 +162,8 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/" itemprop="url">
-	<time datetime="2018-11-14T02:31:44.000Z" itemprop="datePublished">
+						<a href="/2018/11/14/Common-online-document-summary/" itemprop="url">
+	<time datetime="2018-11-14T03:07:05.000Z" itemprop="datePublished">
   		2018-11-14
   </time>
 </a>    
@@ -174,9 +174,7 @@
 						
 							<i class="fa fa-tags"></i>
 							
-								<a href="#Laravel" title="Laravel" rel="1">Laravel</a>&nbsp;
-							
-								<a href="#MySQL" title="MySQL" rel="1">MySQL</a>&nbsp;
+								<a href="#document" title="document" rel="1">document</a>&nbsp;
 													 											
 						
 					</span>
@@ -186,24 +184,21 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<p>大部分情况下，在生产环境中我们会修改 Mysql 服务的默认端口，提高安全性。当使用 Laravel 时需要同时修改配置文件 database.php ，来改变端口。</p>
-<p><img src="/images/posts/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/cover.jpg" alt=""></p>
-<p><br><br><br></p>
-<h3 id="一-修改-config-database-php-文件"><a href="#一-修改-config-database-php-文件" class="headerlink" title="一.修改 config/database.php 文件"></a>一.修改 config/database.php 文件</h3><hr>
-<p><br></p>
-<p>#####1.使用 vim 编辑配置文件，打开 config/database.php</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim config/database.php</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>#####2.找到下面这段内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'mysql'</span> =&gt; [</span><br><span class="line">    <span class="string">'driver'</span>    =&gt; <span class="string">'mysql'</span>,</span><br><span class="line">    <span class="string">'host'</span>      =&gt; env(<span class="string">'DB_HOST'</span>, <span class="string">'localhost'</span>),</span><br><span class="line">    <span class="string">'database'</span>  =&gt; env(<span class="string">'DB_DATABASE'</span>, <span class="string">'forge'</span>),</span><br><span class="line">    <span class="string">'username'</span>  =&gt; env(<span class="string">'DB_USERNAME'</span>, <span class="string">'forge'</span>),</span><br><span class="line">    <span class="string">'password'</span>  =&gt; env(<span class="string">'DB_PASSWORD'</span>, <span class="string">''</span>),</span><br><span class="line">    <span class="string">'charset'</span>   =&gt; <span class="string">'utf8'</span>,</span><br><span class="line">    <span class="string">'collation'</span> =&gt; <span class="string">'utf8_unicode_ci'</span>,</span><br><span class="line">    <span class="string">'prefix'</span>    =&gt; <span class="string">''</span>,</span><br><span class="line">    <span class="string">'strict'</span>    =&gt; <span class="literal">false</span>,</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>#####3.在配置中加入端口配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'port'</span>      =&gt; env(<span class="string">'DB_PORT'</span>, 3306),</span><br></pre></td></tr></table></figure>
+						<p><img src="/images/posts/Common-online-document-summary/cover.jpg" alt=""></p>
+<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><p>Node.js 中文文档<br><a href="http://nodeapi.ucdok.com/#/api/" target="_blank" rel="noopener">http://nodeapi.ucdok.com/#/api/</a></p>
+<p>模版引擎Swig<br><a href="http://paularmstrong.github.io/swig/docs/" target="_blank" rel="noopener">http://paularmstrong.github.io/swig/docs/</a></p>
+<p>ES6<br><a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">http://es6.ruanyifeng.com/</a></p>
 <p><br><br></p>
-<h3 id="二-修改-env-文件"><a href="#二-修改-env-文件" class="headerlink" title="二.修改 .env 文件"></a>二.修改 .env 文件</h3><hr>
-<p><br></p>
-<p>在 .env 配置文件中添加 DB_PORT 配置，例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DB_PORT=30006</span><br></pre></td></tr></table></figure>
+<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><p>PHP 手册<br><a href="http://php.net/manual/zh/" target="_blank" rel="noopener">http://php.net/manual/zh/</a></p>
+<p>ThinkPHP3.2<br><a href="http://document.thinkphp.cn/manual_3_2.html" target="_blank" rel="noopener">http://document.thinkphp.cn/manual_3_2.html</a></p>
+<p><br><br></p>
+<h2 id="Golang"><a href="#Golang" class="headerlink" title="Golang"></a>Golang</h2><p>Golang 手册<br><a href="http://godoc.golangtc.com/doc/" target="_blank" rel="noopener">http://godoc.golangtc.com/doc/</a></p>
+<p><br><br></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>Nginx 中文文档<br><a href="http://www.nginx.cn/doc/" target="_blank" rel="noopener">http://www.nginx.cn/doc/</a></p>
+<p>CSS2.0 参考手册<br><a href="http://www.mb5u.com/tool/css2/" target="_blank" rel="noopener">http://www.mb5u.com/tool/css2/</a></p>
+<p>CSS3.0 参考手册<br><a href="http://www.phpstudy.net/css3/" target="_blank" rel="noopener">http://www.phpstudy.net/css3/</a></p>
+<p>Bootstrap3 中文文档<br><a href="http://v3.bootcss.com/getting-started/" target="_blank" rel="noopener">http://v3.bootcss.com/getting-started/</a></p>
+<p>JQuery 中文手册<br><a href="http://www.php100.com/manual/jquery/index.html" target="_blank" rel="noopener">http://www.php100.com/manual/jquery/index.html</a></p>
 
 					
 				</div>
@@ -213,14 +208,14 @@
 		<ul class="am-pagination">
     
     	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/11/14/Command-in-Vim-PHP/" title="Vim中的 " !"="" 命令="" +="" "php"="" 奇技淫巧"="">
+   		<a class="pull-left" href="/2018/11/14/Turn-on-VIM-mode-for-Sublime-Text/" title="开启 Sublime Text 的 VIM 模式">
       		&laquo; 上一篇
 		</a>
 		</li>
 	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/11/14/Fix-Composer-does-not-install-and-update-properly/" title="Composer 无法正常安装/更新解决">
+		<a class="pull-right" href="/2018/11/14/Embed-PHP-in-Golang/" title="在 Golang 中嵌入PHP?">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -312,7 +307,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-修改-config-database-php-文件"><span class="post-toc-text">一.修改 config/database.php 文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-修改-env-文件"><span class="post-toc-text">二.修改 .env 文件</span></a></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Node-js"><span class="post-toc-text">Node.js</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#PHP"><span class="post-toc-text">PHP</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Golang"><span class="post-toc-text">Golang</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他"><span class="post-toc-text">其他</span></a></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</div></div></aside>

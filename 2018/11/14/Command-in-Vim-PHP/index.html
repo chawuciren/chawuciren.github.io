@@ -10,7 +10,7 @@
 		
 
 <head><meta name="generator" content="Hexo 3.8.0">
-	<title>Laravel 连接 Mysql 时使用非默认端口的配置</title>
+	<title>Vim中的 &#34;!&#34; 命令 + &#34;PHP&#34; 奇技淫巧</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI">
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class="page-name">当前文章&nbsp;:&nbsp;《Laravel 连接 Mysql 时使用非默认端口的配置》</p>
+			<p class="page-name">当前文章&nbsp;:&nbsp;《Vim中的 &#34;!&#34; 命令 + &#34;PHP&#34; 奇技淫巧》</p>
 			
 		
 	
@@ -152,8 +152,8 @@
 					
 					
 	
-		<a href="/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/" itemprop="url">		
-			Laravel 连接 Mysql 时使用非默认端口的配置		
+		<a href="/2018/11/14/Command-in-Vim-PHP/" itemprop="url">		
+			Vim中的 &#34;!&#34; 命令 + &#34;PHP&#34; 奇技淫巧		
 		</a>
 	
 
@@ -162,8 +162,8 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/" itemprop="url">
-	<time datetime="2018-11-14T02:31:44.000Z" itemprop="datePublished">
+						<a href="/2018/11/14/Command-in-Vim-PHP/" itemprop="url">
+	<time datetime="2018-11-14T02:53:48.000Z" itemprop="datePublished">
   		2018-11-14
   </time>
 </a>    
@@ -174,9 +174,9 @@
 						
 							<i class="fa fa-tags"></i>
 							
-								<a href="#Laravel" title="Laravel" rel="1">Laravel</a>&nbsp;
+								<a href="#VIM" title="VIM" rel="2">VIM</a>&nbsp;
 							
-								<a href="#MySQL" title="MySQL" rel="1">MySQL</a>&nbsp;
+								<a href="#PHP" title="PHP" rel="3">PHP</a>&nbsp;
 													 											
 						
 					</span>
@@ -186,24 +186,33 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<p>大部分情况下，在生产环境中我们会修改 Mysql 服务的默认端口，提高安全性。当使用 Laravel 时需要同时修改配置文件 database.php ，来改变端口。</p>
-<p><img src="/images/posts/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/cover.jpg" alt=""></p>
+						<p>Vim中的<code>!</code>符号可以用来获取外部命令的运行结果并替换当前选中的文本。所以我们可以配合<code>PHP</code>来完成一些复杂任务。</p>
+<p><img src="/images/posts/Command-in-Vim-PHP/cover.jpg" alt=""></p>
 <p><br><br><br></p>
-<h3 id="一-修改-config-database-php-文件"><a href="#一-修改-config-database-php-文件" class="headerlink" title="一.修改 config/database.php 文件"></a>一.修改 config/database.php 文件</h3><hr>
+<h3 id="一-使用方式"><a href="#一-使用方式" class="headerlink" title="一.使用方式"></a>一.使用方式</h3><hr>
 <p><br></p>
-<p>#####1.使用 vim 编辑配置文件，打开 config/database.php</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim config/database.php</span><br></pre></td></tr></table></figure>
+<p>首先用vim新建一个文本，并在文本中插入下面代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'success!'</span>;</span><br></pre></td></tr></table></figure>
 <p><br></p>
-<p>#####2.找到下面这段内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'mysql'</span> =&gt; [</span><br><span class="line">    <span class="string">'driver'</span>    =&gt; <span class="string">'mysql'</span>,</span><br><span class="line">    <span class="string">'host'</span>      =&gt; env(<span class="string">'DB_HOST'</span>, <span class="string">'localhost'</span>),</span><br><span class="line">    <span class="string">'database'</span>  =&gt; env(<span class="string">'DB_DATABASE'</span>, <span class="string">'forge'</span>),</span><br><span class="line">    <span class="string">'username'</span>  =&gt; env(<span class="string">'DB_USERNAME'</span>, <span class="string">'forge'</span>),</span><br><span class="line">    <span class="string">'password'</span>  =&gt; env(<span class="string">'DB_PASSWORD'</span>, <span class="string">''</span>),</span><br><span class="line">    <span class="string">'charset'</span>   =&gt; <span class="string">'utf8'</span>,</span><br><span class="line">    <span class="string">'collation'</span> =&gt; <span class="string">'utf8_unicode_ci'</span>,</span><br><span class="line">    <span class="string">'prefix'</span>    =&gt; <span class="string">''</span>,</span><br><span class="line">    <span class="string">'strict'</span>    =&gt; <span class="literal">false</span>,</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>#####3.在配置中加入端口配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'port'</span>      =&gt; env(<span class="string">'DB_PORT'</span>, 3306),</span><br></pre></td></tr></table></figure>
+<p>接着使用 shift ＋ v 进入 visual 模式，选中刚才插入的文本。然后按<code>!</code>，输入php，刚才选中的部分就被替换成 “success!” 了。</p>
 <p><br><br></p>
-<h3 id="二-修改-env-文件"><a href="#二-修改-env-文件" class="headerlink" title="二.修改 .env 文件"></a>二.修改 .env 文件</h3><hr>
+<h3 id="二-做点复杂的事情"><a href="#二-做点复杂的事情" class="headerlink" title="二.做点复杂的事情"></a>二.做点复杂的事情</h3><hr>
 <p><br></p>
-<p>在 .env 配置文件中添加 DB_PORT 配置，例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DB_PORT=30006</span><br></pre></td></tr></table></figure>
+<h5 id="1-给一堆数字排个序"><a href="#1-给一堆数字排个序" class="headerlink" title="1.给一堆数字排个序"></a>1.给一堆数字排个序</h5><p>如果你现在有一堆逗号分隔的数字：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">72,412,967,259,938,281,342,55,256,158,52,443,11,843,119,116,587,913,14,318,198,569,413,272,186,221,346,946,223,397,855,294,808,822,553,746,103,894,801,35    8,52,852,801,63,695,919,178,281,832,192,599,29,760,12,301,946,232,647,892,454,43,746,748,851,567,300,597,669,194,397,27,245,249,827,307,943,746,485,223,57    8,677,822,606,437,833,907,383,64,553,274,518,596,20,265,447,587,565,43,256,758,</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>怎样才能快速的给这些数字排序并保持现在的格式不变呢？这时候我们就可以使用上面说到的奇技淫巧了！把上面的那串字符串赋值给一个变量，并进行排序：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$str = <span class="string">'72,412,967,259,938,281,342,55,256,158,52,443,11,843,119,116,587,913,14,318,198,569,413,272,186,221,346,946,223,397,855,294,808,822,553,746,103,894,801,358,52,852,801,63,695,919,178,281,832,192,599,29,760,12,301,946,232,647,892,454,43,746,748,851,567,300,597,669,194,397,27,245,249,827,307,943,746,485,223,578,677,822,606,437,833,907,383,64,553,274,518,596,20,265,447,587,565,43,256,758'</span>;</span><br><span class="line">$arr = explode(<span class="string">','</span>, $str);</span><br><span class="line">sort($arr);</span><br><span class="line">$strRes = implode(<span class="string">','</span>, $arr);</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> $strRes;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>选中上面的内容后用<code>!php</code>运行，然后瞬间就得到我们要的排序后的结果了！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">11,12,14,20,27,29,43,43,52,52,55,63,64,72,103,116,119,158,178,186,192,194,198,221,223,223,232,245,249,256,256,259,265,272,274,281,281,294,300,301,307,318,342,346,358,383,397,397,412,413,437,443,447,454,485,518,553,553,565,567,569,578,587,587,596,597,599,606,647,669,677,695,746,746,746,748,758,760,801,801,808,822,822,827,832,833,843,851,852,855,892,894,907,913,919,938,943,946,946,967</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h5 id="2-做一些临时的计算"><a href="#2-做一些临时的计算" class="headerlink" title="2.做一些临时的计算"></a>2.做一些临时的计算</h5><p>你正在写一些奇怪的东西：“一年总共有xxxx秒，其中的xxxx秒你都在床上……”，这时候你卡住了，你想不起来一年到底有多少秒，于是无法继续构思下面的“在床上”部分了，你很烦恼。这时你不需要切换到程序列表，找到计算器，郑重其事的把秒数算出来，只要接着敲：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$str = <span class="string">'一年总共有'</span>;</span><br><span class="line">$str .= <span class="number">365</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span>;</span><br><span class="line">$str .= <span class="string">'秒'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> $str;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>然后使用<code>!php</code>运行，只要一秒钟你就得到你想要的内容了：“一年总共有31536000秒”。于是你开心的继续构思后面的“在床上”部分去了。</p>
+<p><br></p>
+<h5 id="2-做其他在vim中不方便的事情"><a href="#2-做其他在vim中不方便的事情" class="headerlink" title="2.做其他在vim中不方便的事情"></a>2.做其他在vim中不方便的事情</h5><p>只要你的脑洞够大，还可以用<code>!php</code>来完成更多任务，更好的方便你的码字生涯。</p>
 
 					
 				</div>
@@ -213,14 +222,14 @@
 		<ul class="am-pagination">
     
     	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/11/14/Command-in-Vim-PHP/" title="Vim中的 " !"="" 命令="" +="" "php"="" 奇技淫巧"="">
+   		<a class="pull-left" href="/2018/11/14/Embed-PHP-in-Golang/" title="在 Golang 中嵌入PHP?">
       		&laquo; 上一篇
 		</a>
 		</li>
 	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/11/14/Fix-Composer-does-not-install-and-update-properly/" title="Composer 无法正常安装/更新解决">
+		<a class="pull-right" href="/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/" title="Laravel 连接 Mysql 时使用非默认端口的配置">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -312,7 +321,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-修改-config-database-php-文件"><span class="post-toc-text">一.修改 config/database.php 文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-修改-env-文件"><span class="post-toc-text">二.修改 .env 文件</span></a></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-使用方式"><span class="post-toc-text">一.使用方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-做点复杂的事情"><span class="post-toc-text">二.做点复杂的事情</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-给一堆数字排个序"><span class="post-toc-text">1.给一堆数字排个序</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-做一些临时的计算"><span class="post-toc-text">2.做一些临时的计算</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-做其他在vim中不方便的事情"><span class="post-toc-text">2.做其他在vim中不方便的事情</span></a></li></ol></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</div></div></aside>

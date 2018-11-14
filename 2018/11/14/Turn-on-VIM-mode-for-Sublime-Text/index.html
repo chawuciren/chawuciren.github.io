@@ -10,7 +10,7 @@
 		
 
 <head><meta name="generator" content="Hexo 3.8.0">
-	<title>Laravel 连接 Mysql 时使用非默认端口的配置</title>
+	<title>开启 Sublime Text 的 VIM 模式</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI">
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class="page-name">当前文章&nbsp;:&nbsp;《Laravel 连接 Mysql 时使用非默认端口的配置》</p>
+			<p class="page-name">当前文章&nbsp;:&nbsp;《开启 Sublime Text 的 VIM 模式》</p>
 			
 		
 	
@@ -152,8 +152,8 @@
 					
 					
 	
-		<a href="/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/" itemprop="url">		
-			Laravel 连接 Mysql 时使用非默认端口的配置		
+		<a href="/2018/11/14/Turn-on-VIM-mode-for-Sublime-Text/" itemprop="url">		
+			开启 Sublime Text 的 VIM 模式		
 		</a>
 	
 
@@ -162,8 +162,8 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/" itemprop="url">
-	<time datetime="2018-11-14T02:31:44.000Z" itemprop="datePublished">
+						<a href="/2018/11/14/Turn-on-VIM-mode-for-Sublime-Text/" itemprop="url">
+	<time datetime="2018-11-14T03:12:16.000Z" itemprop="datePublished">
   		2018-11-14
   </time>
 </a>    
@@ -174,9 +174,9 @@
 						
 							<i class="fa fa-tags"></i>
 							
-								<a href="#Laravel" title="Laravel" rel="1">Laravel</a>&nbsp;
+								<a href="#VIM" title="VIM" rel="2">VIM</a>&nbsp;
 							
-								<a href="#MySQL" title="MySQL" rel="1">MySQL</a>&nbsp;
+								<a href="#Sublime Text" title="Sublime Text" rel="1">Sublime Text</a>&nbsp;
 													 											
 						
 					</span>
@@ -186,24 +186,13 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<p>大部分情况下，在生产环境中我们会修改 Mysql 服务的默认端口，提高安全性。当使用 Laravel 时需要同时修改配置文件 database.php ，来改变端口。</p>
-<p><img src="/images/posts/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/cover.jpg" alt=""></p>
-<p><br><br><br></p>
-<h3 id="一-修改-config-database-php-文件"><a href="#一-修改-config-database-php-文件" class="headerlink" title="一.修改 config/database.php 文件"></a>一.修改 config/database.php 文件</h3><hr>
+						<p><img src="/images/posts/Turn-on-VIM-mode-for-Sublime-Text/cover.jpg" alt=""></p>
+<hr>
+<p>经常在切换到 Sublime 中编辑一些文本时，不自觉地敲了 VIM 的命令。其实 Sublime 也支持使用 VIM 模式来编辑文件，但是需要在配置中自己开启。</p>
 <p><br></p>
-<p>#####1.使用 vim 编辑配置文件，打开 config/database.php</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim config/database.php</span><br></pre></td></tr></table></figure>
+<h5 id="1-在菜单栏中：-Preferences-gt-Setting-User-，即可打开配置文件进行编辑，将-ignored-packages-项的-里面内容清空："><a href="#1-在菜单栏中：-Preferences-gt-Setting-User-，即可打开配置文件进行编辑，将-ignored-packages-项的-里面内容清空：" class="headerlink" title="1.在菜单栏中： Preferences -&gt; Setting - User ，即可打开配置文件进行编辑，将 ignored_packages 项的[]里面内容清空："></a>1.在菜单栏中： Preferences -&gt; Setting - User ，即可打开配置文件进行编辑，将 ignored_packages 项的[]里面内容清空：</h5><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"ignored_packages":</span><br><span class="line">　[</span><br><span class="line">　]</span><br></pre></td></tr></table></figure>
 <p><br></p>
-<p>#####2.找到下面这段内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'mysql'</span> =&gt; [</span><br><span class="line">    <span class="string">'driver'</span>    =&gt; <span class="string">'mysql'</span>,</span><br><span class="line">    <span class="string">'host'</span>      =&gt; env(<span class="string">'DB_HOST'</span>, <span class="string">'localhost'</span>),</span><br><span class="line">    <span class="string">'database'</span>  =&gt; env(<span class="string">'DB_DATABASE'</span>, <span class="string">'forge'</span>),</span><br><span class="line">    <span class="string">'username'</span>  =&gt; env(<span class="string">'DB_USERNAME'</span>, <span class="string">'forge'</span>),</span><br><span class="line">    <span class="string">'password'</span>  =&gt; env(<span class="string">'DB_PASSWORD'</span>, <span class="string">''</span>),</span><br><span class="line">    <span class="string">'charset'</span>   =&gt; <span class="string">'utf8'</span>,</span><br><span class="line">    <span class="string">'collation'</span> =&gt; <span class="string">'utf8_unicode_ci'</span>,</span><br><span class="line">    <span class="string">'prefix'</span>    =&gt; <span class="string">''</span>,</span><br><span class="line">    <span class="string">'strict'</span>    =&gt; <span class="literal">false</span>,</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>#####3.在配置中加入端口配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'port'</span>      =&gt; env(<span class="string">'DB_PORT'</span>, 3306),</span><br></pre></td></tr></table></figure>
-<p><br><br></p>
-<h3 id="二-修改-env-文件"><a href="#二-修改-env-文件" class="headerlink" title="二.修改 .env 文件"></a>二.修改 .env 文件</h3><hr>
-<p><br></p>
-<p>在 .env 配置文件中添加 DB_PORT 配置，例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DB_PORT=30006</span><br></pre></td></tr></table></figure>
+<h5 id="2-关闭-Sublime-并重新启动："><a href="#2-关闭-Sublime-并重新启动：" class="headerlink" title="2.关闭 Sublime 并重新启动："></a>2.关闭 Sublime 并重新启动：</h5><p>这时 VIM 模式已经被启用，在编辑前按Esc键退出编辑模式，就进入 VIM 模式了。</p>
 
 					
 				</div>
@@ -213,14 +202,14 @@
 		<ul class="am-pagination">
     
     	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/11/14/Command-in-Vim-PHP/" title="Vim中的 " !"="" 命令="" +="" "php"="" 奇技淫巧"="">
+   		<a class="pull-left" href="/2018/11/14/Fix-PHP-s-httpoxy-Remote-Agent-Vulnerability/" title="修复 PHP 的 httpoxy 远程代理漏洞">
       		&laquo; 上一篇
 		</a>
 		</li>
 	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/11/14/Fix-Composer-does-not-install-and-update-properly/" title="Composer 无法正常安装/更新解决">
+		<a class="pull-right" href="/2018/11/14/Common-online-document-summary/" title="常用的在线文档汇总">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -312,7 +301,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-修改-config-database-php-文件"><span class="post-toc-text">一.修改 config/database.php 文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-修改-env-文件"><span class="post-toc-text">二.修改 .env 文件</span></a></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-在菜单栏中：-Preferences-gt-Setting-User-，即可打开配置文件进行编辑，将-ignored-packages-项的-里面内容清空："><span class="post-toc-text">1.在菜单栏中： Preferences -&gt; Setting - User ，即可打开配置文件进行编辑，将 ignored_packages 项的[]里面内容清空：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-关闭-Sublime-并重新启动："><span class="post-toc-text">2.关闭 Sublime 并重新启动：</span></a></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</div></div></aside>
