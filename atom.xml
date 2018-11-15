@@ -5,9 +5,9 @@
   <subtitle>大道至简 少既是多</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://chawuciren.cc/"/>
   <updated>2018-11-14T07:11:16.460Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://chawuciren.cc/</id>
   
   <author>
     <name>chawuciren</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>如何编写一个PHP扩展</title>
-    <link href="http://yoursite.com/2018/11/14/How-to-write-a-PHP-extension/"/>
-    <id>http://yoursite.com/2018/11/14/How-to-write-a-PHP-extension/</id>
+    <link href="http://chawuciren.cc/2018/11/14/How-to-write-a-PHP-extension/"/>
+    <id>http://chawuciren.cc/2018/11/14/How-to-write-a-PHP-extension/</id>
     <published>2018-11-14T03:44:02.000Z</published>
     <updated>2018-11-14T07:11:16.460Z</updated>
     
@@ -35,19 +35,19 @@
     
     </summary>
     
-      <category term="整理" scheme="http://yoursite.com/categories/%E6%95%B4%E7%90%86/"/>
+      <category term="整理" scheme="http://chawuciren.cc/categories/%E6%95%B4%E7%90%86/"/>
     
     
-      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+      <category term="PHP" scheme="http://chawuciren.cc/tags/PHP/"/>
     
-      <category term="扩展" scheme="http://yoursite.com/tags/%E6%89%A9%E5%B1%95/"/>
+      <category term="扩展" scheme="http://chawuciren.cc/tags/%E6%89%A9%E5%B1%95/"/>
     
   </entry>
   
   <entry>
     <title>为你的博客开启免费 HTTPS</title>
-    <link href="http://yoursite.com/2018/11/14/Turn-on-free-HTTPS-for-your-blog/"/>
-    <id>http://yoursite.com/2018/11/14/Turn-on-free-HTTPS-for-your-blog/</id>
+    <link href="http://chawuciren.cc/2018/11/14/Turn-on-free-HTTPS-for-your-blog/"/>
+    <id>http://chawuciren.cc/2018/11/14/Turn-on-free-HTTPS-for-your-blog/</id>
     <published>2018-11-14T03:32:42.000Z</published>
     <updated>2018-11-14T03:43:17.728Z</updated>
     
@@ -63,19 +63,19 @@
     
     </summary>
     
-      <category term="整理" scheme="http://yoursite.com/categories/%E6%95%B4%E7%90%86/"/>
+      <category term="整理" scheme="http://chawuciren.cc/categories/%E6%95%B4%E7%90%86/"/>
     
     
-      <category term="HTTPS" scheme="http://yoursite.com/tags/HTTPS/"/>
+      <category term="HTTPS" scheme="http://chawuciren.cc/tags/HTTPS/"/>
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="http://chawuciren.cc/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>修复 PHP 的 httpoxy 远程代理漏洞</title>
-    <link href="http://yoursite.com/2018/11/14/Fix-PHP-s-httpoxy-Remote-Agent-Vulnerability/"/>
-    <id>http://yoursite.com/2018/11/14/Fix-PHP-s-httpoxy-Remote-Agent-Vulnerability/</id>
+    <link href="http://chawuciren.cc/2018/11/14/Fix-PHP-s-httpoxy-Remote-Agent-Vulnerability/"/>
+    <id>http://chawuciren.cc/2018/11/14/Fix-PHP-s-httpoxy-Remote-Agent-Vulnerability/</id>
     <published>2018-11-14T03:19:33.000Z</published>
     <updated>2018-11-14T06:00:38.560Z</updated>
     
@@ -91,21 +91,21 @@
     
     </summary>
     
-      <category term="随记" scheme="http://yoursite.com/categories/%E9%9A%8F%E8%AE%B0/"/>
+      <category term="随记" scheme="http://chawuciren.cc/categories/%E9%9A%8F%E8%AE%B0/"/>
     
     
-      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+      <category term="PHP" scheme="http://chawuciren.cc/tags/PHP/"/>
     
-      <category term="httppoxy" scheme="http://yoursite.com/tags/httppoxy/"/>
+      <category term="httppoxy" scheme="http://chawuciren.cc/tags/httppoxy/"/>
     
-      <category term="远程代理漏洞" scheme="http://yoursite.com/tags/%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%90%86%E6%BC%8F%E6%B4%9E/"/>
+      <category term="远程代理漏洞" scheme="http://chawuciren.cc/tags/%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%90%86%E6%BC%8F%E6%B4%9E/"/>
     
   </entry>
   
   <entry>
     <title>开启 Sublime Text 的 VIM 模式</title>
-    <link href="http://yoursite.com/2018/11/14/Turn-on-VIM-mode-for-Sublime-Text/"/>
-    <id>http://yoursite.com/2018/11/14/Turn-on-VIM-mode-for-Sublime-Text/</id>
+    <link href="http://chawuciren.cc/2018/11/14/Turn-on-VIM-mode-for-Sublime-Text/"/>
+    <id>http://chawuciren.cc/2018/11/14/Turn-on-VIM-mode-for-Sublime-Text/</id>
     <published>2018-11-14T03:12:16.000Z</published>
     <updated>2018-11-14T03:18:37.311Z</updated>
     
@@ -121,19 +121,19 @@
     
     </summary>
     
-      <category term="随记" scheme="http://yoursite.com/categories/%E9%9A%8F%E8%AE%B0/"/>
+      <category term="随记" scheme="http://chawuciren.cc/categories/%E9%9A%8F%E8%AE%B0/"/>
     
     
-      <category term="VIM" scheme="http://yoursite.com/tags/VIM/"/>
+      <category term="VIM" scheme="http://chawuciren.cc/tags/VIM/"/>
     
-      <category term="Sublime Text" scheme="http://yoursite.com/tags/Sublime-Text/"/>
+      <category term="Sublime Text" scheme="http://chawuciren.cc/tags/Sublime-Text/"/>
     
   </entry>
   
   <entry>
     <title>常用的在线文档汇总</title>
-    <link href="http://yoursite.com/2018/11/14/Common-online-document-summary/"/>
-    <id>http://yoursite.com/2018/11/14/Common-online-document-summary/</id>
+    <link href="http://chawuciren.cc/2018/11/14/Common-online-document-summary/"/>
+    <id>http://chawuciren.cc/2018/11/14/Common-online-document-summary/</id>
     <published>2018-11-14T03:07:05.000Z</published>
     <updated>2018-11-14T03:11:33.218Z</updated>
     
@@ -149,17 +149,17 @@
     
     </summary>
     
-      <category term="整理" scheme="http://yoursite.com/categories/%E6%95%B4%E7%90%86/"/>
+      <category term="整理" scheme="http://chawuciren.cc/categories/%E6%95%B4%E7%90%86/"/>
     
     
-      <category term="document" scheme="http://yoursite.com/tags/document/"/>
+      <category term="document" scheme="http://chawuciren.cc/tags/document/"/>
     
   </entry>
   
   <entry>
     <title>在 Golang 中嵌入PHP?</title>
-    <link href="http://yoursite.com/2018/11/14/Embed-PHP-in-Golang/"/>
-    <id>http://yoursite.com/2018/11/14/Embed-PHP-in-Golang/</id>
+    <link href="http://chawuciren.cc/2018/11/14/Embed-PHP-in-Golang/"/>
+    <id>http://chawuciren.cc/2018/11/14/Embed-PHP-in-Golang/</id>
     <published>2018-11-14T02:59:35.000Z</published>
     <updated>2018-11-14T03:06:01.908Z</updated>
     
@@ -175,19 +175,19 @@
     
     </summary>
     
-      <category term="整理" scheme="http://yoursite.com/categories/%E6%95%B4%E7%90%86/"/>
+      <category term="整理" scheme="http://chawuciren.cc/categories/%E6%95%B4%E7%90%86/"/>
     
     
-      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+      <category term="PHP" scheme="http://chawuciren.cc/tags/PHP/"/>
     
-      <category term="Golang" scheme="http://yoursite.com/tags/Golang/"/>
+      <category term="Golang" scheme="http://chawuciren.cc/tags/Golang/"/>
     
   </entry>
   
   <entry>
     <title>Vim中的 &quot;!&quot; 命令 + &quot;PHP&quot; 奇技淫巧</title>
-    <link href="http://yoursite.com/2018/11/14/Command-in-Vim-PHP/"/>
-    <id>http://yoursite.com/2018/11/14/Command-in-Vim-PHP/</id>
+    <link href="http://chawuciren.cc/2018/11/14/Command-in-Vim-PHP/"/>
+    <id>http://chawuciren.cc/2018/11/14/Command-in-Vim-PHP/</id>
     <published>2018-11-14T02:53:48.000Z</published>
     <updated>2018-11-14T03:09:25.171Z</updated>
     
@@ -203,19 +203,19 @@
     
     </summary>
     
-      <category term="整理" scheme="http://yoursite.com/categories/%E6%95%B4%E7%90%86/"/>
+      <category term="整理" scheme="http://chawuciren.cc/categories/%E6%95%B4%E7%90%86/"/>
     
     
-      <category term="VIM" scheme="http://yoursite.com/tags/VIM/"/>
+      <category term="VIM" scheme="http://chawuciren.cc/tags/VIM/"/>
     
-      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+      <category term="PHP" scheme="http://chawuciren.cc/tags/PHP/"/>
     
   </entry>
   
   <entry>
     <title>Laravel 连接 Mysql 时使用非默认端口的配置</title>
-    <link href="http://yoursite.com/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/"/>
-    <id>http://yoursite.com/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/</id>
+    <link href="http://chawuciren.cc/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/"/>
+    <id>http://chawuciren.cc/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/</id>
     <published>2018-11-14T02:31:44.000Z</published>
     <updated>2018-11-14T02:36:43.389Z</updated>
     
@@ -231,19 +231,19 @@
     
     </summary>
     
-      <category term="随记" scheme="http://yoursite.com/categories/%E9%9A%8F%E8%AE%B0/"/>
+      <category term="随记" scheme="http://chawuciren.cc/categories/%E9%9A%8F%E8%AE%B0/"/>
     
     
-      <category term="Laravel" scheme="http://yoursite.com/tags/Laravel/"/>
+      <category term="Laravel" scheme="http://chawuciren.cc/tags/Laravel/"/>
     
-      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
+      <category term="MySQL" scheme="http://chawuciren.cc/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>Composer 无法正常安装/更新解决</title>
-    <link href="http://yoursite.com/2018/11/14/Fix-Composer-does-not-install-and-update-properly/"/>
-    <id>http://yoursite.com/2018/11/14/Fix-Composer-does-not-install-and-update-properly/</id>
+    <link href="http://chawuciren.cc/2018/11/14/Fix-Composer-does-not-install-and-update-properly/"/>
+    <id>http://chawuciren.cc/2018/11/14/Fix-Composer-does-not-install-and-update-properly/</id>
     <published>2018-11-14T02:24:55.000Z</published>
     <updated>2018-11-14T08:35:14.486Z</updated>
     
@@ -259,17 +259,17 @@
     
     </summary>
     
-      <category term="随记" scheme="http://yoursite.com/categories/%E9%9A%8F%E8%AE%B0/"/>
+      <category term="随记" scheme="http://chawuciren.cc/categories/%E9%9A%8F%E8%AE%B0/"/>
     
     
-      <category term="Composer" scheme="http://yoursite.com/tags/Composer/"/>
+      <category term="Composer" scheme="http://chawuciren.cc/tags/Composer/"/>
     
   </entry>
   
   <entry>
     <title>在 Web 页面中使用 Protobuffer 与服务端通信</title>
-    <link href="http://yoursite.com/2018/11/14/Use-Protobuffer-to-communicate-with-the-server-side-in-Web-pages/"/>
-    <id>http://yoursite.com/2018/11/14/Use-Protobuffer-to-communicate-with-the-server-side-in-Web-pages/</id>
+    <link href="http://chawuciren.cc/2018/11/14/Use-Protobuffer-to-communicate-with-the-server-side-in-Web-pages/"/>
+    <id>http://chawuciren.cc/2018/11/14/Use-Protobuffer-to-communicate-with-the-server-side-in-Web-pages/</id>
     <published>2018-11-14T02:14:54.000Z</published>
     <updated>2018-11-14T02:37:12.719Z</updated>
     
@@ -285,17 +285,17 @@
     
     </summary>
     
-      <category term="整理" scheme="http://yoursite.com/categories/%E6%95%B4%E7%90%86/"/>
+      <category term="整理" scheme="http://chawuciren.cc/categories/%E6%95%B4%E7%90%86/"/>
     
     
-      <category term="ProtoBuffer" scheme="http://yoursite.com/tags/ProtoBuffer/"/>
+      <category term="ProtoBuffer" scheme="http://chawuciren.cc/tags/ProtoBuffer/"/>
     
   </entry>
   
   <entry>
     <title>CentOS 中安装 DNSmasq 实现本地 DNS 服务器</title>
-    <link href="http://yoursite.com/2018/11/14/Install-dnsmasq-in-CentOS-to-implement-local-DNS-server/"/>
-    <id>http://yoursite.com/2018/11/14/Install-dnsmasq-in-CentOS-to-implement-local-DNS-server/</id>
+    <link href="http://chawuciren.cc/2018/11/14/Install-dnsmasq-in-CentOS-to-implement-local-DNS-server/"/>
+    <id>http://chawuciren.cc/2018/11/14/Install-dnsmasq-in-CentOS-to-implement-local-DNS-server/</id>
     <published>2018-11-14T01:37:59.000Z</published>
     <updated>2018-11-14T03:05:29.476Z</updated>
     
@@ -311,14 +311,14 @@
     
     </summary>
     
-      <category term="整理" scheme="http://yoursite.com/categories/%E6%95%B4%E7%90%86/"/>
+      <category term="整理" scheme="http://chawuciren.cc/categories/%E6%95%B4%E7%90%86/"/>
     
     
-      <category term="CentOS" scheme="http://yoursite.com/tags/CentOS/"/>
+      <category term="CentOS" scheme="http://chawuciren.cc/tags/CentOS/"/>
     
-      <category term="DNSmasq" scheme="http://yoursite.com/tags/DNSmasq/"/>
+      <category term="DNSmasq" scheme="http://chawuciren.cc/tags/DNSmasq/"/>
     
-      <category term="DNS" scheme="http://yoursite.com/tags/DNS/"/>
+      <category term="DNS" scheme="http://chawuciren.cc/tags/DNS/"/>
     
   </entry>
   
