@@ -10,7 +10,7 @@
 		
 
 <head><meta name="generator" content="Hexo 3.8.0">
-	<title>开启 Sublime Text 的 VIM 模式</title>
+	<title>为 Hexo 博客启用 RSS 订阅功能</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI">
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class="page-name">当前文章&nbsp;:&nbsp;《开启 Sublime Text 的 VIM 模式》</p>
+			<p class="page-name">当前文章&nbsp;:&nbsp;《为 Hexo 博客启用 RSS 订阅功能》</p>
 			
 		
 	
@@ -167,8 +167,8 @@
 					
 					
 	
-		<a href="/2018/11/14/Turn-on-VIM-mode-for-Sublime-Text/" itemprop="url">		
-			开启 Sublime Text 的 VIM 模式		
+		<a href="/2018/11/15/Enable-RSS-feeds-for-Hexo-blogs/" itemprop="url">		
+			为 Hexo 博客启用 RSS 订阅功能		
 		</a>
 	
 
@@ -177,9 +177,9 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/11/14/Turn-on-VIM-mode-for-Sublime-Text/" itemprop="url">
-	<time datetime="2018-11-14T03:12:16.000Z" itemprop="datePublished">
-  		2018-11-14
+						<a href="/2018/11/15/Enable-RSS-feeds-for-Hexo-blogs/" itemprop="url">
+	<time datetime="2018-11-15T06:42:55.000Z" itemprop="datePublished">
+  		2018-11-15
   </time>
 </a>    
 &nbsp;
@@ -189,9 +189,9 @@
 						
 							<i class="fa fa-tags"></i>
 							
-								<a href="#VIM" title="VIM" rel="2">VIM</a>&nbsp;
+								<a href="#Hexo" title="Hexo" rel="1">Hexo</a>&nbsp;
 							
-								<a href="#Sublime Text" title="Sublime Text" rel="1">Sublime Text</a>&nbsp;
+								<a href="#RSS" title="RSS" rel="1">RSS</a>&nbsp;
 													 											
 						
 					</span>
@@ -201,16 +201,34 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<p><img src="/images/posts/Turn-on-VIM-mode-for-Sublime-Text/cover.jpg" alt=""></p>
-<hr>
-<blockquote>
-<p>经常在切换到 Sublime 中编辑一些文本时，不自觉地敲了 VIM 的命令。其实 Sublime 也支持使用 VIM 模式来编辑文件，但是需要在配置中自己开启。</p>
+						<blockquote>
+<p><strong>RSS（简易信息聚合）</strong> 是一种消息来源格式规范，用以聚合经常发布更新数据的网站，例如博客文章、新闻、音频或视频的网摘。</p>
 </blockquote>
+<p><img src="/images/posts/Enable-RSS-feeds-for-Hexo-blogs/cover.jpg" alt=""></p>
+<h2 id="一、安装-npm-包"><a href="#一、安装-npm-包" class="headerlink" title="一、安装 npm 包"></a>一、安装 npm 包</h2><p><br><br></p>
+<p>实现 RSS 功能想要事先安装 <code>hexo-generator-feed</code> 这个包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<h2 id="二、修改配置文件"><a href="#二、修改配置文件" class="headerlink" title="二、修改配置文件"></a>二、修改配置文件</h2><p><br><br></p>
+<p>在 <code>Hexo</code> 博客的根目录下找到配置文件 <code>_config.yml</code>，在文件结尾加上后面的配置内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">feed:</span><br><span class="line">  <span class="built_in">type</span>: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  <span class="built_in">limit</span>: 20</span><br><span class="line">  hub:</span><br><span class="line">  content:</span><br><span class="line">  content_limit:</span><br><span class="line">  content_limit_delim: <span class="string">' '</span></span><br><span class="line">  order_by: -date</span><br></pre></td></tr></table></figure>
+<p>上面配置内容的含义为：</p>
+<ul>
+<li><em>type:</em> RSS类型（<code>atom</code>/<code>rss2</code>)</li>
+<li><em>path:</em> RSS文件路径</li>
+<li><em>limit:</em> 展示文章的数量（<code>0</code>或<code>false</code>表示展示全部）</li>
+<li><em>hub:</em></li>
+<li><em>content:</em> 是否在RSS文件中显示内容（<code>true</code>/<code>false</code>，不填默认为<code>false</code>）</li>
+<li><em>content_limit:</em> 摘要的内容长度，<code>content</code>值为<code>false</code>时有效</li>
+<li><em>content_limit_delim:</em> 内容截取分割符，分隔符作为截取结束标志</li>
+</ul>
+<p><br><br></p>
+<h2 id="三、重新生成内容"><a href="#三、重新生成内容" class="headerlink" title="三、重新生成内容"></a>三、重新生成内容</h2><p><br><br></p>
+<p>配置完成后重新运行生成命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
 <p><br></p>
-<h5 id="1-在菜单栏中：-Preferences-gt-Setting-User-，即可打开配置文件进行编辑，将-ignored-packages-项的-里面内容清空："><a href="#1-在菜单栏中：-Preferences-gt-Setting-User-，即可打开配置文件进行编辑，将-ignored-packages-项的-里面内容清空：" class="headerlink" title="1.在菜单栏中： Preferences -&gt; Setting - User ，即可打开配置文件进行编辑，将 ignored_packages 项的[]里面内容清空："></a>1.在菜单栏中： Preferences -&gt; Setting - User ，即可打开配置文件进行编辑，将 ignored_packages 项的[]里面内容清空：</h5><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"ignored_packages":</span><br><span class="line">　[</span><br><span class="line">　]</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h5 id="2-关闭-Sublime-并重新启动："><a href="#2-关闭-Sublime-并重新启动：" class="headerlink" title="2.关闭 Sublime 并重新启动："></a>2.关闭 Sublime 并重新启动：</h5><p>这时 VIM 模式已经被启用，在编辑前按Esc键退出编辑模式，就进入 VIM 模式了。</p>
-
+<p>查看博客根目录下的 <code>public</code> 文件夹，可以在文件夹下看到 <code>atom.xml</code> 文件，接下来可以执行发布命令将内容发布上线了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 					
 				</div>
 			</div>
@@ -218,15 +236,9 @@
 
 		<ul class="am-pagination">
     
-    	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/11/14/Fix-PHP-s-httpoxy-Remote-Agent-Vulnerability/" title="修复 PHP 的 httpoxy 远程代理漏洞">
-      		&laquo; 上一篇
-		</a>
-		</li>
-	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/11/14/Common-online-document-summary/" title="常用的在线文档汇总">
+		<a class="pull-right" href="/2018/11/14/How-to-write-a-PHP-extension/" title="如何编写一个PHP扩展">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -280,7 +292,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-在菜单栏中：-Preferences-gt-Setting-User-，即可打开配置文件进行编辑，将-ignored-packages-项的-里面内容清空："><span class="post-toc-text">1.在菜单栏中： Preferences -&gt; Setting - User ，即可打开配置文件进行编辑，将 ignored_packages 项的[]里面内容清空：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-关闭-Sublime-并重新启动："><span class="post-toc-text">2.关闭 Sublime 并重新启动：</span></a></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、安装-npm-包"><span class="post-toc-text">一、安装 npm 包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、修改配置文件"><span class="post-toc-text">二、修改配置文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、重新生成内容"><span class="post-toc-text">三、重新生成内容</span></a></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</div></div></aside>

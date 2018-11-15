@@ -42,6 +42,12 @@
 	font-weight: bold;
 }
 
+.theme-annie-post-date, .theme-annie-post-date a time {
+	font-weight: normal;
+	font-size: 12px !important;
+	color: #999;
+}
+
 .continue-read {
 	padding: 0.5rem 1rem;
 	float: right;

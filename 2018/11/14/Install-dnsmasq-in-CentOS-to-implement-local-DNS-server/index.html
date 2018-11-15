@@ -206,13 +206,13 @@
 						<p><br><br><br></p>
 <p><img src="/images/posts/Install-dnsmasq-in-CentOS-to-implement-local-DNS-server/cover.jpg" alt=""></p>
 <h3 id="一-场景"><a href="#一-场景" class="headerlink" title="一.场景"></a>一.场景</h3><hr>
-<p>大部分时候我们的服务端开发环境下并不止部署一套代码，可以通过修改 host 文件的方式，将不同项目用不同域名访问，如 <a href="http://www.myapp1.dev" target="_blank" rel="noopener">www.myapp1.dev</a> <a href="http://www.myapp1.dev，并将域名解析到开发环境的" target="_blank" rel="noopener">www.myapp1.dev，并将域名解析到开发环境的</a> web 服务器。 例如下面的 host 文件，我的开发环境部署在 ip 为<code>192.168.1.101</code>这台虚拟机上：</p>
+<p>大部分时候服务端开发环境下并不止部署一套代码，可以通过修改 <code>hosts</code> 文件的方式，将不同项目用不同域名访问，如 <code>www.myapp1.dev</code> <code>www.myapp1.dev</code>，并将域名解析到开发环境的 Web 服务器。 例如下面的 <code>hosts</code> 文件，开发环境部署在 ip 为 <code>192.168.1.101</code> 这台虚拟机上：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">192.168.1.101 www.game.dev </span><br><span class="line">192.168.1.101 www.shop.dev</span><br></pre></td></tr></table></figure>
-<p>于是当我们在浏览器中输入<code>www.game.dev</code>时，请求就会被解析到<code>192.168.1.101</code>了。 但在与客户端联调的过程中，手机需要越狱或者root才能够修改 host 文件，为了方便开发，我们还可以在局域网内部署一套简单的 dns 服务来达到之前的目的。</p>
+<p>于是当在浏览器中输入<code>www.game.dev</code>时，请求就会被解析到<code>192.168.1.101</code>了。 但在与客户端联调的过程中，手机需要越狱或者root才能够修改 host 文件，为了方便开发，还可以在局域网内部署一套简单的 dns 服务来达到之前的目的。</p>
 <p><br><br><br></p>
 <h3 id="二-安装-dnsmasq"><a href="#二-安装-dnsmasq" class="headerlink" title="二.安装 dnsmasq"></a>二.安装 dnsmasq</h3><hr>
 <p><br></p>
-<p>这里我们不再单独编译安装这个服务，而是简单的使<code>yum</code>来安装： </p>
+<p>这里不再单独编译安装这个服务，而是简单的使<code>yum</code>来安装： </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install dnsmasq -y</span><br></pre></td></tr></table></figure>
 <p><br><br><br></p>
 <h3 id="三-增加配置文件"><a href="#三-增加配置文件" class="headerlink" title="三.增加配置文件"></a>三.增加配置文件</h3><hr>
