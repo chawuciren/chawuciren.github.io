@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chawuciren.cc/"/>
-  <updated>2018-11-15T07:10:37.866Z</updated>
+  <updated>2018-11-25T07:54:32.446Z</updated>
   <id>http://chawuciren.cc/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>磁力搜索引擎索引</title>
+    <link href="http://chawuciren.cc/2018/11/25/Magnetic-search-engine-index/"/>
+    <id>http://chawuciren.cc/2018/11/25/Magnetic-search-engine-index/</id>
+    <published>2018-11-25T07:20:59.000Z</published>
+    <updated>2018-11-25T07:54:32.446Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="随记" scheme="http://chawuciren.cc/categories/%E9%9A%8F%E8%AE%B0/"/>
+    
+    
+      <category term="磁力搜索" scheme="http://chawuciren.cc/tags/%E7%A3%81%E5%8A%9B%E6%90%9C%E7%B4%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>为 Hexo 博客启用 RSS 订阅功能</title>
@@ -234,9 +260,9 @@
       <category term="整理" scheme="http://chawuciren.cc/categories/%E6%95%B4%E7%90%86/"/>
     
     
-      <category term="VIM" scheme="http://chawuciren.cc/tags/VIM/"/>
-    
       <category term="PHP" scheme="http://chawuciren.cc/tags/PHP/"/>
+    
+      <category term="VIM" scheme="http://chawuciren.cc/tags/VIM/"/>
     
   </entry>
   
@@ -245,7 +271,7 @@
     <link href="http://chawuciren.cc/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/"/>
     <id>http://chawuciren.cc/2018/11/14/Laravel-uses-a-non-default-port-configuration-when-connecting-to-Mysql/</id>
     <published>2018-11-14T02:31:44.000Z</published>
-    <updated>2018-11-15T07:17:27.234Z</updated>
+    <updated>2018-11-25T07:33:53.023Z</updated>
     
     <summary type="html">
     

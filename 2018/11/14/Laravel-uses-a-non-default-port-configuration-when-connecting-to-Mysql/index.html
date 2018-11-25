@@ -76,7 +76,7 @@
 
 	<!-- others: such as change-bg, time... -->
 	<p class="page-name-other">
-		11/15/2018 
+		11/25/2018 
 		<style type="text/css">
 	header:after {
 		content: '';
@@ -208,14 +208,11 @@
 <p><br><br><br></p>
 <h3 id="一-修改-config-database-php-文件"><a href="#一-修改-config-database-php-文件" class="headerlink" title="一.修改 config/database.php 文件"></a>一.修改 config/database.php 文件</h3><hr>
 <p><br></p>
-<p>#####1.使用 vim 编辑配置文件，打开 config/database.php</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim config/database.php</span><br></pre></td></tr></table></figure>
+<h5 id="1-使用-vim-编辑配置文件，打开-config-database-php"><a href="#1-使用-vim-编辑配置文件，打开-config-database-php" class="headerlink" title="1.使用 vim 编辑配置文件，打开 config/database.php"></a>1.使用 vim 编辑配置文件，打开 config/database.php</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim config/database.php</span><br></pre></td></tr></table></figure>
 <p><br></p>
-<p>#####2.找到下面这段内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'mysql'</span> =&gt; [</span><br><span class="line">    <span class="string">'driver'</span>    =&gt; <span class="string">'mysql'</span>,</span><br><span class="line">    <span class="string">'host'</span>      =&gt; env(<span class="string">'DB_HOST'</span>, <span class="string">'localhost'</span>),</span><br><span class="line">    <span class="string">'database'</span>  =&gt; env(<span class="string">'DB_DATABASE'</span>, <span class="string">'forge'</span>),</span><br><span class="line">    <span class="string">'username'</span>  =&gt; env(<span class="string">'DB_USERNAME'</span>, <span class="string">'forge'</span>),</span><br><span class="line">    <span class="string">'password'</span>  =&gt; env(<span class="string">'DB_PASSWORD'</span>, <span class="string">''</span>),</span><br><span class="line">    <span class="string">'charset'</span>   =&gt; <span class="string">'utf8'</span>,</span><br><span class="line">    <span class="string">'collation'</span> =&gt; <span class="string">'utf8_unicode_ci'</span>,</span><br><span class="line">    <span class="string">'prefix'</span>    =&gt; <span class="string">''</span>,</span><br><span class="line">    <span class="string">'strict'</span>    =&gt; <span class="literal">false</span>,</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+<h5 id="2-找到下面这段内容"><a href="#2-找到下面这段内容" class="headerlink" title="2.找到下面这段内容"></a>2.找到下面这段内容</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'mysql'</span> =&gt; [</span><br><span class="line">    <span class="string">'driver'</span>    =&gt; <span class="string">'mysql'</span>,</span><br><span class="line">    <span class="string">'host'</span>      =&gt; env(<span class="string">'DB_HOST'</span>, <span class="string">'localhost'</span>),</span><br><span class="line">    <span class="string">'database'</span>  =&gt; env(<span class="string">'DB_DATABASE'</span>, <span class="string">'forge'</span>),</span><br><span class="line">    <span class="string">'username'</span>  =&gt; env(<span class="string">'DB_USERNAME'</span>, <span class="string">'forge'</span>),</span><br><span class="line">    <span class="string">'password'</span>  =&gt; env(<span class="string">'DB_PASSWORD'</span>, <span class="string">''</span>),</span><br><span class="line">    <span class="string">'charset'</span>   =&gt; <span class="string">'utf8'</span>,</span><br><span class="line">    <span class="string">'collation'</span> =&gt; <span class="string">'utf8_unicode_ci'</span>,</span><br><span class="line">    <span class="string">'prefix'</span>    =&gt; <span class="string">''</span>,</span><br><span class="line">    <span class="string">'strict'</span>    =&gt; <span class="literal">false</span>,</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
 <p><br></p>
-<p>#####3.在配置中加入端口配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'port'</span>      =&gt; env(<span class="string">'DB_PORT'</span>, 3306),</span><br></pre></td></tr></table></figure>
+<h5 id="3-在配置中加入端口配置"><a href="#3-在配置中加入端口配置" class="headerlink" title="3.在配置中加入端口配置"></a>3.在配置中加入端口配置</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'port'</span>      =&gt; env(<span class="string">'DB_PORT'</span>, 3306),</span><br></pre></td></tr></table></figure>
 <p><br><br></p>
 <h3 id="二-修改-env-文件"><a href="#二-修改-env-文件" class="headerlink" title="二.修改 .env 文件"></a>二.修改 .env 文件</h3><hr>
 <p><br></p>
@@ -291,7 +288,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-修改-config-database-php-文件"><span class="post-toc-text">一.修改 config/database.php 文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-修改-env-文件"><span class="post-toc-text">二.修改 .env 文件</span></a></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-修改-config-database-php-文件"><span class="post-toc-text">一.修改 config/database.php 文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-使用-vim-编辑配置文件，打开-config-database-php"><span class="post-toc-text">1.使用 vim 编辑配置文件，打开 config/database.php</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-找到下面这段内容"><span class="post-toc-text">2.找到下面这段内容</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-在配置中加入端口配置"><span class="post-toc-text">3.在配置中加入端口配置</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-修改-env-文件"><span class="post-toc-text">二.修改 .env 文件</span></a></li>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</div></div></aside>
